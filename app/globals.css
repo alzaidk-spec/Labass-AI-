@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #2563EB;
+    --color-secondary: #3B82F6;
+    --color-accent: #F97316;
+    --color-bg: #E0E5EC;
+    --color-surface: #E0E5EC;
+    --color-text: #1E293B;
+    --color-text-muted: #6B7280;
+    --color-inset: #D1D9E6;
+    --color-focus: #6C63FF;
+    --shadow-light: rgba(255,255,255,0.6);
+    --shadow-dark: rgba(163,177,198,0.7);
+    --radius-card: 24px;
+    --radius-button: 12px;
+    --font-heading: 'Figtree', sans-serif;
+    --font-body: 'Noto Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Neumorphic utility classes */
+@layer utilities {
+  .neu-raised {
+    background: var(--color-surface);
+    box-shadow:
+      6px 6px 10px var(--shadow-dark),
+      -6px -6px 10px var(--shadow-light);
+    border-radius: var(--radius-card);
+  }
+
+  .neu-raised-sm {
+    background: var(--color-surface);
+    box-shadow:
+      4px 4px 8px var(--shadow-dark),
+      -4px -4px 8px var(--shadow-light);
+    border-radius: var(--radius-button);
+  }
+
+  .neu-inset {
+    background: var(--color-inset);
+    box-shadow:
+      inset 4px 4px 6px var(--shadow-dark),
+      inset -4px -4px 6px var(--shadow-light);
+    border-radius: var(--radius-button);
+  }
+
+  .neu-button {
+    background: var(--color-surface);
+    box-shadow:
+      4px 4px 8px var(--shadow-dark),
+      -4px -4px 8px var(--shadow-light);
+    border-radius: var(--radius-button);
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .neu-button:hover {
+    box-shadow:
+      2px 2px 4px var(--shadow-dark),
+      -2px -2px 4px var(--shadow-light);
+  }
+
+  .neu-button:active {
+    box-shadow:
+      inset 2px 2px 4px var(--shadow-dark),
+      inset -2px -2px 4px var(--shadow-light);
+    transform: scale(0.97);
+  }
+}
+
